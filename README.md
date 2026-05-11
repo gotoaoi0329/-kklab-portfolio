@@ -101,6 +101,53 @@ Edit CSS custom properties in `style.css`:
 └── README.md    # This file
 ```
 
+## Prompt
+
+This site was generated with the following prompt. You can use it to recreate or extend the template:
+
+```
+Create a static portfolio site using only HTML, CSS, and Vanilla JS — no build tools or external dependencies.
+
+Requirements:
+- File structure: index.html, style.css, script.js, README.md only
+- Deployable on GitHub Pages as-is
+- Responsive design (mobile to desktop)
+- Accessibility: skip links, ARIA attributes, keyboard focus, prefers-reduced-motion
+
+Design:
+- Dark mode default with light/dark toggle button
+- CSS custom properties for theme colors
+- Gradient hero section and accents
+- Background decorative blobs (fixed, blurred circles)
+- Scroll reveal animations via IntersectionObserver
+- Fixed header with backdrop-filter blur
+
+Features:
+1. Theme toggle: dark/light switch, saved to localStorage, OS setting as fallback
+2. Language toggle: JP/EN switch using data-i18n-jp / data-i18n-en attributes, saved to localStorage, browser language as fallback
+3. Smooth scroll for navigation links
+4. Scroll animations: add .visible to .reveal elements when intersecting
+
+Sections:
+1. Hero: profile photo, name (JP/EN), tagline (JP/EN), 2 CTA buttons
+2. About: bio text (JP/EN)
+3. Skills: categorized badges (Languages / Tools & Frameworks / Other) with color coding
+4. Projects: grid cards with title, description, tech badges, GitHub link, Live link
+5. Experience: timeline with year, role, organization
+6. Contact: GitHub / Email / X(Twitter) links with SVG icons
+7. Footer: copyright and GitHub repo link
+
+Templating:
+- Use {{PLACEHOLDER}} format for personal info so anyone can customize
+- Include placeholder guide and deployment instructions in README
+
+Technical notes:
+- Use color-mix() for transparent colors
+- Disable animations under prefers-reduced-motion
+- Ensure :focus-visible visibility
+- Wrap script.js in IIFE with 'use strict'
+```
+
 ## License
 
 MIT
@@ -177,6 +224,53 @@ git push -u origin main
 ### アクセントカラーの変更
 
 `style.css` の `:root` と `[data-theme="light"]` 内の `--accent` / `--accent-2` / `--accent-3` を変更してください。
+
+## プロンプト
+
+このサイトは以下のプロンプトで生成されました。テンプレートの再現や拡張にご利用ください。
+
+```
+ビルドツールや外部フレームワークを一切使わず、HTML・CSS・Vanilla JS のみで静的ポートフォリオサイトを作成してください。
+
+基本要件:
+- ファイル構成は index.html / style.css / script.js / README.md のみ
+- GitHub Pages にそのままデプロイできること
+- レスポンシブ対応（モバイル〜デスクトップ）
+- アクセシビリティ対応（スキップリンク、ARIA属性、キーボードフォーカス、prefers-reduced-motion）
+
+デザイン:
+- ダークモードをデフォルトとし、ライトモードへの切り替えボタンを設置
+- CSS カスタムプロパティ（変数）でテーマ色を管理
+- グラデーションを使用したヒーローセクションとアクセント
+- 背景にぼやけた円形の装飾（blob）を固定配置
+- スクロール時の reveal アニメーション（IntersectionObserver）
+- ヘッダーは固定表示＋背景ぼかし（backdrop-filter）
+
+機能:
+1. テーマ切り替え: ダーク/ライトの切り替え。localStorage に保存。OS設定を初期値のフォールバックとする
+2. 言語切り替え: 日本語/英語の切り替え。各要素に data-i18n-jp / data-i18n-en 属性を持たせ、ボタン切り替えで textContent を入れ替える。localStorage に保存。ブラウザ言語を初期値のフォールバックとする
+3. スムーススクロール: ナビゲーションリンクで該当セクションへスムーススクロール
+4. スクロールアニメーション: .reveal クラスの要素が画面に入ったら .visible を付与してフェードイン
+
+セクション構成:
+1. Hero: プロフィール写真、名前（日/英）、キャッチコピー（日/英）、CTAボタン×2
+2. About: 自己紹介テキスト（日/英）
+3. Skills: カテゴリ別（言語 / ツール・フレームワーク / その他）のバッジ表示。カテゴリごとに色分け
+4. Projects: グリッドレイアウトのカード。プロジェクト名、説明、使用技術バッジ、GitHubリンク、Liveリンク
+5. Experience: タイムライン形式の経歴・学歴。年、役職、組織名
+6. Contact: GitHub / Email / X(Twitter) へのリンク（SVGアイコン付き）
+7. Footer: コピーライトとGitHubリポジトリリンク
+
+テンプレート化:
+- 名前や連絡先などの個人情報は {{PLACEHOLDER}} 形式にして、誰でも自分の情報に置き換えられるようにする
+- README にプレースホルダー一覧とカスタマイズ方法、GitHub Pages デプロイ手順を記載する
+
+技術的な注意点:
+- CSS は color-mix() を使用して透明度付きの色を生成
+- prefers-reduced-motion: reduce ではアニメーションを無効化
+- フォーカス可視性（:focus-visible）を確保
+- script.js は即時実行関数（IIFE）で囲み 'use strict' を使用
+```
 
 ## ライセンス
 
